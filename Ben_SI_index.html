@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Benedict Chua — Sales Director, EHSI</title>
+<meta name="description" content="Benedict Chua, Sales Director at EHSI — IT Solutions, Systems Integration & Project Development.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,340;9..144,480;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:        #14181F;   /* primary navy-black */
+    --ink-soft:   #1F2733;   /* secondary panel navy */
+    --gold:       #F9C700;   /* brand gold */
+    --gold-deep:  #8A6D00;   /* accessible gold for link text (~5.6:1 on paper) */
+    --paper:      #FFFFFF;   /* card white */
+    --paper-dim:  #F4F4F3;   /* page base, off-white so pure white reads as a lifted card */
+    --line:       #E7E7E5;
+    --text:       #33363B;
+    --text-soft:  #7A7D82;
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    background:var(--paper-dim);
+    color:var(--text);
+    font-family:'IBM Plex Sans', -apple-system, sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{ color:inherit; }
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--ink); outline-offset:3px;
+  }
+
+  .wrap{ max-width:720px; margin:0 auto; padding:0 28px; }
+
+  /* ---------- Header ---------- */
+  header{
+    background:var(--ink);
+    color:var(--paper);
+  }
+  .header-row{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:20px 28px;
+    max-width:720px; margin:0 auto;
+  }
+  .header-row img{ height:34px; width:auto; display:block; }
+  .header-tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--gold); opacity:.9; text-align:right; line-height:1.5;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    background:var(--ink);
+    color:var(--paper);
+    overflow:hidden;
+    padding:56px 0 44px;
+  }
+  .hero-inner{ position:relative; z-index:2; }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--gold); margin:0 0 14px;
+  }
+  .name{
+    font-family:'Fraunces', serif;
+    font-optical-sizing:auto;
+    font-weight:480;
+    font-size:clamp(40px, 8vw, 58px);
+    line-height:1.02;
+    margin:0 0 8px;
+    color:#FFFFFF;
+  }
+  .title{
+    font-size:17px;
+    color:#C9CCD3;
+    margin:0 0 26px;
+    font-weight:400;
+  }
+  .keyword-strip{
+    display:flex; flex-wrap:wrap; align-items:center;
+    gap:10px 0;
+    padding:16px 0;
+    border-top:1px solid rgba(249,199,0,.28);
+    border-bottom:1px solid rgba(249,199,0,.28);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--gold);
+    margin-bottom:30px;
+  }
+  .keyword-strip span.sep{ margin:0 12px; color:rgba(249,199,0,.5); }
+
+  .cta-row{ display:flex; flex-wrap:wrap; gap:12px; }
+  .btn{
+    display:inline-flex; align-items:center; gap:9px;
+    padding:13px 22px;
+    font-family:'IBM Plex Sans', sans-serif;
+    font-size:14.5px; font-weight:600;
+    border-radius:2px;
+    text-decoration:none;
+    border:1px solid transparent;
+    transition:transform .15s ease, background .15s ease, border-color .15s ease;
+  }
+  .btn-primary{
+    background:var(--gold); color:var(--ink);
+  }
+  .btn-primary:hover{ background:#FFD52B; transform:translateY(-1px); }
+  .btn-ghost{
+    background:transparent; color:var(--paper);
+    border-color:rgba(251,250,246,.35);
+  }
+  .btn-ghost:hover{ border-color:var(--gold); color:var(--gold); transform:translateY(-1px); }
+  .btn svg{ width:16px; height:16px; flex:none; }
+
+  /* blueprint node-line decoration */
+  .blueprint{
+    position:absolute; top:0; right:-40px; height:100%; width:56%;
+    z-index:1; opacity:.9; pointer-events:none;
+  }
+  .blueprint line, .blueprint circle{
+    stroke:var(--gold); opacity:.22;
+  }
+  .blueprint circle{ fill:var(--gold); opacity:.5; }
+  .blueprint path{
+    stroke:var(--gold); fill:none; opacity:.28; stroke-width:1;
+    stroke-dasharray:6 5;
+  }
+  @media (prefers-reduced-motion:no-preference){
+    .blueprint path{ animation:dash 26s linear infinite; }
+  }
+  @keyframes dash{ to{ stroke-dashoffset:-500; } }
+
+  /* ---------- Strengths ---------- */
+  .strengths{
+    background:var(--ink-soft);
+    color:var(--paper);
+    padding:28px 0 64px;   /* extra bottom room for the contact card to overlap into */
+  }
+  .strengths-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:22px;
+  }
+  .strength h3{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--gold); margin:0 0 6px; font-weight:500;
+  }
+  .strength p{
+    font-size:13px; line-height:1.5; color:#C9CCD3; margin:0;
+  }
+  @media (max-width:560px){
+    .strengths-grid{ grid-template-columns:1fr; gap:18px; }
+  }
+
+  /* ---------- Contact ---------- */
+  /* Presented as a lifted card overlapping the dark strengths section above,
+     so the shift to a light background reads as a deliberate layer rather
+     than an abrupt color change. */
+  .contact{
+    position:relative;
+    z-index:3;
+    background:var(--paper);
+    margin:-40px 20px 0;
+    border-radius:4px 4px 0 0;
+    border-top:3px solid var(--gold);
+    box-shadow:0 -14px 32px rgba(20,24,31,.14), 0 1px 0 rgba(20,24,31,.02);
+    padding:40px 0 4px;
+  }
+  .contact .wrap{ padding:0 28px; }
+  .section-label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--text-soft); margin:0 0 18px;
+  }
+  .contact-list{ list-style:none; margin:0; padding:0; }
+  .contact-list li{
+    display:flex; align-items:flex-start; gap:16px;
+    padding:16px 0; border-bottom:1px solid var(--line);
+  }
+  .contact-list li:first-child{ padding-top:0; }
+  .contact-list li:last-child{ border-bottom:none; }
+  .c-icon{
+    flex:none; width:34px; height:34px; border-radius:2px;
+    background:var(--paper-dim); border:1px solid var(--line);
+    display:flex; align-items:center; justify-content:center;
+    color:var(--ink); margin-top:1px;
+  }
+  .c-icon svg{ width:16px; height:16px; }
+  .c-body{ min-width:0; }
+  .c-label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10.5px; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--text-soft); margin:0 0 3px;
+  }
+  .c-value{
+    font-size:15.5px; margin:0; word-break:break-word;
+  }
+  .c-value a{
+    color:var(--gold-deep); text-decoration:none; font-weight:500;
+    border-bottom:1px solid rgba(138,109,0,.35);
+  }
+  .c-value a:hover{ border-bottom-color:var(--gold-deep); }
+  .c-note{ font-size:12.5px; color:var(--text-soft); margin:3px 0 0; }
+
+  /* ---------- Footer ---------- */
+  footer{
+    background:var(--ink); color:#9BA0AA;
+    padding:26px 0;
+    margin-top:0;              /* contact card now sits flush above the footer */
+  }
+  .foot-row{
+    display:flex; justify-content:space-between; align-items:center;
+    flex-wrap:wrap; gap:10px;
+    font-size:12px; font-family:'IBM Plex Mono', monospace;
+  }
+  .foot-row .brand{ color:var(--gold); letter-spacing:.05em; }
+
+  @media (max-width:520px){
+    .header-row{ padding:16px 20px; }
+    .wrap{ padding:0 20px; }
+    .hero{ padding:44px 0 34px; }
+    .blueprint{ width:80%; opacity:.5; }
+    .contact{ margin:-32px 12px 0; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-row">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKAAAAA6CAYAAAA3MlIIAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDcuMS1jMDAwIDc5LmVkYTJiM2ZhYywgMjAyMS8xMS8xNy0xNzoyMzoxOSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDIzLjEgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUIwRkQ2MDc4MDJFMTFFQ0E3OEY5QjQ5REYwMUE1NEIiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUIwRkQ2MDg4MDJFMTFFQ0E3OEY5QjQ5REYwMUE1NEIiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QjBGRDYwNTgwMkUxMUVDQTc4RjlCNDlERjAxQTU0QiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QjBGRDYwNjgwMkUxMUVDQTc4RjlCNDlERjAxQTU0QiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pqr9HowAABO/SURBVHja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" alt="EHSI logo">
+    <div class="header-tag">IT Solutions &amp;<br>Systems Integration</div>
+  </div>
+</header>
+
+<section class="hero">
+  <svg class="blueprint" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <line x1="40" y1="60" x2="220" y2="60"></line>
+    <line x1="220" y1="60" x2="220" y2="150"></line>
+    <line x1="220" y1="150" x2="340" y2="150"></line>
+    <line x1="80" y1="150" x2="220" y2="150"></line>
+    <line x1="80" y1="150" x2="80" y2="250"></line>
+    <line x1="80" y1="250" x2="200" y2="250"></line>
+    <line x1="200" y1="250" x2="200" y2="340"></line>
+    <line x1="200" y1="340" x2="330" y2="340"></line>
+    <line x1="330" y1="150" x2="330" y2="340"></line>
+    <path d="M40 60 Q 130 20 220 60 T 340 150"></path>
+    <path d="M80 150 Q 40 220 80 250 T 200 340"></path>
+    <circle cx="40" cy="60" r="4"></circle>
+    <circle cx="220" cy="60" r="4"></circle>
+    <circle cx="220" cy="150" r="4"></circle>
+    <circle cx="80" cy="150" r="4"></circle>
+    <circle cx="340" cy="150" r="4"></circle>
+    <circle cx="80" cy="250" r="4"></circle>
+    <circle cx="200" cy="250" r="4"></circle>
+    <circle cx="200" cy="340" r="4"></circle>
+    <circle cx="330" cy="340" r="4"></circle>
+    <circle cx="330" cy="150" r="4"></circle>
+  </svg>
+
+  <div class="wrap hero-inner">
+    <p class="eyebrow">Digital Business Card</p>
+    <h1 class="name">Bendedict Chua</h1>
+    <p class="title">Sales Director &nbsp;·&nbsp; EHSI</p>
+
+    <div class="keyword-strip">
+      <span>Solutions</span><span class="sep">/</span>
+      <span>Integration</span><span class="sep">/</span>
+      <span>Project Development &amp; Delivery</span>
+    </div>
+
+    <div class="cta-row">
+      <a class="btn btn-primary" href="Benedict-Chua-SI.vcf" download>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13"/><path d="M7 11l5 5 5-5"/><path d="M4 20h16"/></svg>
+        Save Contact (.vcf)
+      </a>
+      <a class="btn btn-ghost" href="https://wa.me/6598506821" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.3A8.9 8.9 0 0 0 3.1 16.9L2 22l5.2-1.1A8.9 8.9 0 0 0 21 12a8.9 8.9 0 0 0-3.4-5.7zM12 20.1a7.1 7.1 0 0 1-3.6-1l-.3-.2-2.7.6.6-2.6-.2-.3a7.1 7.1 0 1 1 13.2-3.6 7.1 7.1 0 0 1-7 7.1zm3.9-5.3c-.2-.1-1.3-.6-1.5-.7-.2-.1-.3-.1-.5.1s-.6.7-.8.9-.3.2-.5.1a5.8 5.8 0 0 1-1.7-1 6.4 6.4 0 0 1-1.2-1.5c-.1-.2 0-.3.1-.5l.3-.4c.1-.1.1-.2.2-.4s0-.3 0-.4-.5-1.2-.7-1.7-.4-.4-.5-.4h-.4a.9.9 0 0 0-.6.3 2.6 2.6 0 0 0-.8 1.9 4.5 4.5 0 0 0 1 2.4 10.3 10.3 0 0 0 3.9 3.5c.5.2.9.4 1.3.5a3.1 3.1 0 0 0 1.4.1 2.3 2.3 0 0 0 1.5-1.1 1.9 1.9 0 0 0 .1-1.1c-.1-.1-.2-.2-.4-.3z"/></svg>
+        WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="strengths">
+  <div class="wrap strengths-grid">
+    <div class="strength">
+      <h3>Solutions</h3>
+      <p>IT strategy and infrastructure built around what the business actually needs to run on.</p>
+    </div>
+    <div class="strength">
+      <h3>Integration</h3>
+      <p>Systems, vendors and platforms connected into one coherent, manageable environment.</p>
+    </div>
+    <div class="strength">
+      <h3>Project Delivery</h3>
+      <p>Projects architected end-to-end and carried through to a working, supported result.</p>
+    </div>
+  </div>
+</section>
+
+<section class="contact">
+  <div class="wrap">
+    <p class="section-label">// Contact</p>
+    <ul class="contact-list">
+      <li>
+        <span class="c-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17.6 6.3A8.9 8.9 0 0 0 3.1 16.9L2 22l5.2-1.1A8.9 8.9 0 0 0 21 12a8.9 8.9 0 0 0-3.4-5.7z"/></svg>
+        </span>
+        <div class="c-body">
+          <p class="c-label">WhatsApp</p>
+          <p class="c-value"><a href="https://wa.me/6598506821" target="_blank" rel="noopener">+65 9850 6821</a></p>
+        </div>
+      </li>
+      <li>
+        <span class="c-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="M3 6.5l9 6 9-6"/></svg>
+        </span>
+        <div class="c-body">
+          <p class="c-label">Email</p>
+          <p class="c-value"><a href="mailto:ben.chua@ehsi.co">Ben.chua@ehsi.co</a></p>
+        </div>
+      </li>
+      <li>
+        <span class="c-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg>
+        </span>
+        <div class="c-body">
+          <p class="c-label">Website</p>
+          <p class="c-value"><a href="https://www.ehsi.co" target="_blank" rel="noopener">www.ehsi.co</a></p>
+        </div>
+      </li>
+      <li>
+        <span class="c-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        </span>
+        <div class="c-body">
+          <p class="c-label">Address</p>
+          <p class="c-value"><a href="https://maps.app.goo.gl/fnFQxzTTuF3UKPJC7" target="_blank" rel="noopener">221 Henderson Road, #06-02 (Block A), Singapore 159557</a></p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-row">
+    <span class="brand">EHSI</span>
+    <span>IT Solutions · Systems Integration · Project Delivery — Singapore</span>
+  </div>
+</footer>
+
+</body>
+</html>
